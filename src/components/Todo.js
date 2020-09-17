@@ -24,7 +24,7 @@ export class Todo extends React.Component {
                         <Typography>{this.props.description}</Typography>
                         <Typography>{this.props.name}</Typography>
                         <Typography>{this.props.status}</Typography>
-                        <Typography>{this.props.dueDate.format('DD-MM-YYYY')}</Typography>
+                        <Typography>{new Date(this.props.dueDate).toLocaleDateString()}</Typography>
                     </CardContent>
                 </Card>
             </Grid>

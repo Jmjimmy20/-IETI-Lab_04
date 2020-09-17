@@ -128,22 +128,21 @@ export class TodoApp extends React.Component {
   
     handleSubmit(e) {
         e.preventDefault();
+
+
         if (!this.state.description.length || !this.state.name.length || !this.state.status.length|| !this.state.dueDate) {
             return;
         }
-        const newItem = {
-            description: this.state.description,
-            name: this.state.name,
-            status: this.state.status,
-            dueDate: this.state.dueDate
-        };
-        this.setState(prevState => ({
-            items: prevState.items.concat(newItem),
-            description: '',
-            name: '',
-            status: '',
-            dueDate: new moment()
-        }));
+
+        if (localStorage.getItem("cards") === null) {
+          var cards = [this.state];
+          localStorage.setItem("cards", JSON.stringify(cards));
+        } else {
+          let cards = JSON.parse(localStorage.getItem("cards"));
+          cards.push(this.state);
+          localStorage.setItem("cards", JSON.stringify(cards));
+        }
+        window.location.href = "/home";
     }
   
     

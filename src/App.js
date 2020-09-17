@@ -9,6 +9,8 @@ import {Login} from "./components/Login";
 import {TodoApp} from "./components/TodoApp";
 import Drawer from './components/Drawer';
 import {NewTask} from './components/NewTask';
+import {Home} from './components/Home';
+import {Registration} from './components/Registration';
 
 
     const LoginView =() =>(
@@ -38,6 +40,28 @@ import {NewTask} from './components/NewTask';
             <NewTask/>
         </div>
     );
+
+    const HomeView =() =>(
+        <div>
+            
+            <br/>
+            <br/>
+            <Drawer/>
+            <Home/>
+        </div>
+    );
+
+    const RegView =() =>(
+        <div>
+            
+            <br/>
+            <br/>
+            <Drawer/>
+            <Registration/>
+        </div>
+    );
+
+
 
 
 
@@ -73,6 +97,8 @@ class App extends Component {
                             <Route exact path="/" component={Login}/>  
                             <Route path="/todo" component={TodoView}/>
                             <Route path="/newTask" component = {TaskView}/>
+                            <Route path="/home" component = {HomeView}/>
+                            <Route path="/reg" component = {RegView}/>
                         </Switch>                     
                     </div>
                 </div>

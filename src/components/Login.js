@@ -39,7 +39,7 @@ export class Login extends React.Component{
             localStorage.setItem('User', this.state.mail);
             localStorage.setItem('Name', "Jimmy");
             localStorage.setItem('Psswd', this.state.password);
-            window.location.href = "/todo";
+            window.location.href = "/home";
         }
     }
 

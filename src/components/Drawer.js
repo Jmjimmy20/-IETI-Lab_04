@@ -128,7 +128,7 @@ export default function TemporaryDrawer() {
             <ListItem
                 button
                 key="resumen"
-                
+                onClick = {RegBttn}
 
 
 
@@ -170,15 +170,20 @@ export default function TemporaryDrawer() {
   }
 
   function HomeBttn(){
-    window.location.href= "/todo";
+    window.location.href= "/home";
 };
 
 function TaskBttn(){
   window.location.href= "/newTask";
+};
+
+function RegBttn(){
+  window.location.href= "/reg";
 };
   
 
 function BttnLogout(){
     localStorage.clear();
     window.location.reload();
+    window.location.href= "/";
 };
